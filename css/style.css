@@ -1,0 +1,48 @@
+#logo{
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.3rem;
+  color:#b53389;
+  font-weight:bold;
+  letter-spacing: 1px;
+
+}
+body{
+  font-family: 'Quicksand', sans-serif;
+
+}
+.nav-link{
+  text-transform: uppercase;
+  margin-left:1.2rem;
+}
+.carousel-item{
+ 
+  min-height:100vh;
+  background: no-repeat center center scroll;
+  background-size: cover 
+}
+.images{
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+.carousel-caption{
+  bottom:140px;
+}
+.carousel-caption h5{
+  text-transform: uppercase;
+  font-size:3rem;
+  letter-spacing: 5px;
+}
+.carousel-caption p{
+  font-size:1.5rem;
+  margin:auto;
+  width:75%;
+  letter-spacing: 2px;
+}
+
+
+
+
+/* Sign up */
