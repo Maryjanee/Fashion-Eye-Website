@@ -45,4 +45,97 @@ body{
 
 
 
-/* Sign up */
+/* Login up */
+.login{
+  padding-top:3rem;
+  height:650px;
+  float:right;
+  margin:0.8rem;
+}
+
+.container{
+  margin-top: 1.2rem;
+  
+}
+.right-column{
+  background: #fff;
+  border:1px solid #e6e6e6;
+  width:500px;
+  margin-top:4rem;
+  padding:1.5rem; 
+
+}
+#logincontainer{
+ 
+  padding-top:3rem;
+}
+.login-logo{
+  margin:0.9rem 2rem;
+  color:#b53389 !important;
+  font-family: 'Dancing Script', cursive !important;
+  font-size: 1.8rem !important;
+  font-weight:bold;
+  letter-spacing: 1px;
+ 
+}
+.info{
+  color:#999;
+  font-size: 1.1rem;
+  line-height: 1.2rem;
+  font-weight:700;
+}
+.or{
+  font-size:1.5rem;
+  color:#999;
+  text-transform: uppercase;
+}
+.or:before{
+  content:'';
+  background: #eeffee;
+  height:2px;
+  position:relative;
+  top:0.7rem;
+  width:110px;
+}
+.or:after{
+  content:'';
+  background: #eeffee;
+  height:2px;
+  position:relative;
+  top:0.6rem;
+  width:110px;
+  left:160px;
+}
+.form-group{
+  margin-bottom:1.8rem !important;
+
+}
+.form-control{
+  background: #fafafa;
+  border:1px solid #efefef;
+  font-size:1rem;
+}
+::placeholder{
+  color:#999 !important;
+}
+.btn{
+  margin:0.8rem auto;
+  padding: 2px;
+  font-weight:700;
+}
+.btn-primary{
+  background:#3897f0;
+   border:
+     1px solid #389710 !important;
+   }
+
+.terms{
+  line-height:18px;
+  margin:5px 20px;
+  font-size: 0.9rem;
+  color:#999;
+
+}
+
+
+
