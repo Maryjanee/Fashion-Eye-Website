@@ -60,16 +60,16 @@
 
             <h3>Welcome Back</h3>
             <p class="mb-4">Sign in to gain access to our amazing designs and styles</p>
-            <form class="admin-form" action="">
+            <form id="login-form" class="admin-form" action="http://localhost:3000/users">
 
               <div class="form-group">
-                <input type="text" class="form-control " placeholder="Enter your email">
+                <input type="text" id="email" class="form-control " placeholder="Enter your email">
               </div>
 
               <div class="form-group">
-                <input type="password" class="form-control " placeholder="Password">
+                <input type="password" id="password" class="form-control " placeholder="Password">
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Log In</button>
+              <button type="submit" class="btn btn-primary btn-block" onclick="loginUser()">Log In</button>
 
             </form>
             <p>New a registered user? <span><a href="../html/signup.html">Sign up</a></span></p>
@@ -91,6 +91,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/login.js"></script>
 
   </body>
 

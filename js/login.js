@@ -1,7 +1,7 @@
 function loginUser() {
-  $('.quote').submit(function (e) {
+  $('#login-form').submit(function (e) {
     e.preventDefault();
-    const email = $('#emailAddress').val();
+    const email = $('#email').val();
     const password = $('#password').val();
     const url = $(this).attr('action');
     if (email.length < 1) {
@@ -18,10 +18,10 @@ function loginUser() {
         if (data.length === 0) {
           alert('User login credentials incorrect')
         } else {
-          if (data[0].isAdmin !== true) {
-            window.location.replace('../html/design.html')
+          if (data.isAdmin !== true) {
+            window.location.replace('../html/designs.html')
           } else {
-            window.location.replace('../html/create.html')
+            window.location.replace('../html/admin.html')
           }
         }
       })
