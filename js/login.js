@@ -14,6 +14,10 @@ function loginUser() {
         type: 'GET',
         dataType: 'json'
       }).done((data) => {
+        // Save to localStorage
+        localStorage.setItem('user', JSON.stringify(data[0]));
+        // Retrieve from localStorage
+        const user = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user'));
         console.log(data)
         if (data.length === 0) {
           alert('User login credentials incorrect')

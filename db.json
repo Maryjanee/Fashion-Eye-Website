@@ -23,6 +23,14 @@
       "password": "sammyowo",
       "isAdmin": "false",
       "id": 3
+    },
+    {
+      "firstName": "Nwosu",
+      "lastName": "Ken",
+      "email": "ken@gmail.com",
+      "password": "aaaassssyytttttt",
+      "isAdmin": "false",
+      "id": 4
     }
   ]
 }
