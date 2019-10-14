@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Mary",
+      "lastName": "Jane",
+      "email": "maryjane@gmail.com",
+      "password": "akpagbuemj12",
+      "isAdmin": true
+    },
+    {
+      "firstName": "Maryjane",
+      "lastName": "Akpagbue",
+      "email": "akpagbuemaryjane@gmail.com",
+      "password": "ooooiiiuuuyyyttt",
+      "isAdmin": "false",
+      "id": 2
+    },
+    {
+      "firstName": "Samuel",
+      "lastName": "Owolabi",
+      "email": "samuel@gmail.com",
+      "password": "sammyowo",
+      "isAdmin": "false",
+      "id": 3
+    }
+  ]
+}
