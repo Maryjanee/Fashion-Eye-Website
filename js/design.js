@@ -38,6 +38,40 @@ $(document).ready(function () {
 
       });
 
+
+
+
+      $('#search-form').submit(function (e) {
+        e.preventDefault();
+        const imgUrl = $("#search-box").val();
+
+        $.ajax({
+          type: "GET",
+          url: `http://localhost:3000/designs/?designUrl=${imgUrl}`,
+          dataType: "json",
+          success: function (data) {
+            $('tbody').replaceWith(`
+            <tr id=${data[0].id}>
+               <th scope="row">${1}</th>
+               <td id="design_name">${data[0].designName}</td>
+               <td id="design_desc">${data[0].designDescription}</td>
+               <td id="design_price">${data[0].designPrice}</td>
+               <td id="design_url">${data[0].designUrl}</td>
+               <td>
+                   <div class="btn-group" role="group" aria-label="Basic example">
+                       <button type="button" class="btn btn-outline-light" id=${data[0].id} data-toggle="modal" data-target="#update-form-modal">Update</button>
+                       <button type="button" class="btn btn-outline-danger" id=${data[0].id}>Delete</button>
+                   </div>
+               </td>
+           </tr>
+            `)
+
+          }
+        })
+      });
+
+
+
       // Delete button function
       $('button.btn-outline-danger').on('click', function (e) {
         $.ajax({
@@ -82,4 +116,12 @@ $(document).ready(function () {
       })
     }
   });
+
+  // http://localhost:3000/designs?designUrl=m5
+
+
+
+
+
+
 });
