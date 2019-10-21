@@ -16,8 +16,8 @@ $(document).ready(function () {
                     </div>
                     <div class="card-footer">
                     <small class="text-muted">${element.designPrice}</small>
-                    <a href="booking.html" class="btn btn-primary stretched-link">Book Design</a>
-                    </div>
+                          <button class="mybtn btn btn-primary stretched-link ml-4">Book Design</button>
+                         
                 </div>
             
             `
@@ -120,6 +120,14 @@ $(document).ready(function () {
           }
         })
       })
+      $('.mybtn').on('click', function (e) {
+        e.preventDefault();
+        const htmlval = this.prev();
+        console.log(htmlval);
+
+      })
+
+
 
       //Update button function
       $('button.update-design-button').on('click', function (e) {

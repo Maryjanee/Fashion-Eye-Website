@@ -6,26 +6,7 @@ $(document).ready(function () {
     type: "GET",
     cache: true,
     success: function (data) {
-      console.log(data)
       data.forEach((element, i) => {
-        $('.container-content').append(
-          `             
-                  
-                      <div class="card col-md-4 ">
-                          <img src="../myimages/${element.designUrl}" class="card-img-top" alt="..." width="280px" height="220px">
-                          <div class="card-body">
-                          <h5 class="card-title">${element.designName}</h5>
-                          <p class="card-text">${element.designDescription}</p>
-                          </div>
-                          <div class="card-footer">
-                          <small class="text-muted">${element.designPrice}</small>
-                          <a href="booking.html" class="btn btn-primary stretched-link">Book Design</a>
-                          </div>
-                      </div>
-                  
-                  `
-        )
-
         $('tbody').append(`
                <tr id=${element.id}>
                   <th scope="row">${i + 1}</th>
@@ -111,6 +92,7 @@ $(document).ready(function () {
           })
         }
       });
+      
 
 
       // Delete button function
@@ -155,6 +137,10 @@ $(document).ready(function () {
             }
           })
         })
+
+
+
+
       })
     }
   });
