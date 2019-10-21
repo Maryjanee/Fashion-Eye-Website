@@ -1,12 +1,12 @@
 //function createDesign(e) {
 $(document).ready(function () {
-  $('#create-btn').on('click', function (e) {
+  $('#create-changes').on('click', function (e) {
     e.preventDefault();
 
-    const designName = $('#design-name').val();
-    const designPrice = $('#design-price').val();
-    const designDescription = $('#design-desc').val();
-    const designUrl = $('#design-url').val();
+    const designName = $('#create-design-name').val();
+    const designPrice = $('#create-design-price').val();
+    const designDescription = $('#create-design-desc').val();
+    const designUrl = $('#create-design-url').val();
     const designer = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user'));
     const designerId = designer["id"];
     const url = $(this).attr('action');
@@ -28,7 +28,7 @@ $(document).ready(function () {
         type: "POST",
         data: designValues,
         success: function (data) {
-          alert("success");
+          alert("Successful")
         },
         error: function (error) {
           alert("there was an error");
@@ -39,8 +39,3 @@ $(document).ready(function () {
   })
 
 })
-
-
-
-
-

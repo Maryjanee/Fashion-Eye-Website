@@ -10,20 +10,21 @@ function loginUser() {
       alert("Please enter your password");
     } else {
       $.ajax({
-        url: url + `/?email=${email}&&password=${password}`,
+        url: url + `?email=${email}&&password=${password}`,
         type: 'GET',
         dataType: 'json'
       }).done((data) => {
+        console.log(data);
         // Save to localStorage
         localStorage.setItem('user', JSON.stringify(data[0]));
         // Retrieve from localStorage
         const user = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user'));
-        console.log(data)
-        if (data.length === 0) {
+
+        if (data[0].length === 0) {
           alert('User login credentials incorrect')
         } else {
-          if (data.isAdmin !== true) {
-            window.location.replace('../html/designs.html')
+          if (data[0].isAdmin !== true) {
+            window.location.replace('../html/designer.html')
           } else {
             window.location.replace('../html/admin.html')
           }

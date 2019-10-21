@@ -9,12 +9,20 @@
       "isAdmin": true
     },
     {
-      "firstName": "Maryjane",
-      "lastName": "Akpagbue",
-      "email": "akpagbuemaryjane@gmail.com",
-      "password": "ooooiiiuuuyyyttt",
+      "firstName": "Stephanie",
+      "lastName": "Scale",
+      "email": "Stephanie@gmail.com",
+      "password": "stephaniesca",
       "isAdmin": "false",
       "id": 2
+    },
+    {
+      "firstName": "Enoobong",
+      "lastName": "Festus",
+      "email": "eno@gmail.com",
+      "password": "enofestus",
+      "isAdmin": "false",
+      "id": 3
     },
     {
       "firstName": "Samuel",
@@ -22,15 +30,106 @@
       "email": "samuel@gmail.com",
       "password": "sammyowo",
       "isAdmin": "false",
+      "id": 4
+    },
+    {
+      "firstName": "Layo",
+      "lastName": "Medahunsi",
+      "email": "layo@gmail.com",
+      "password": "layolayo",
+      "isAdmin": "false",
+      "id": 5
+    },
+    {
+      "firstName": "Ebuka",
+      "lastName": "Akpagbue",
+      "email": "ebuka@gmail.com",
+      "password": "ebukaakp",
+      "isAdmin": "false",
+      "id": 6
+    }
+  ],
+  "designs": [
+    {
+      "designName": "Design one",
+      "designPrice": "$12",
+      "designDescription": "Weekday Cherish fluffy round neck jumper in nen greenn",
+      "designUrl": "img1.jpg",
+      "designerId": "2",
+      "id": 1
+    },
+    {
+      "designName": "Design Two",
+      "designPrice": "$14",
+      "designDescription": "Weekday Cherish fluffy round neck jumper in neon skyblue",
+      "designUrl": "img2.jpg",
+      "designerId": "2",
+      "id": 2
+    },
+    {
+      "designName": "Design Three",
+      "designPrice": "$11",
+      "designDescription": "ASOS DESIGN Tall mix & match suit in black and grey",
+      "designUrl": "img3.jpg",
+      "designerId": "2",
       "id": 3
     },
     {
-      "firstName": "Nwosu",
-      "lastName": "Ken",
-      "email": "ken@gmail.com",
-      "password": "aaaassssyytttttt",
-      "isAdmin": "false",
+      "designName": "Design  Four",
+      "designPrice": "$21",
+      "designDescription": "ASOS DESIGN Tall mix & match suit in black",
+      "designUrl": "img4.jpg",
+      "designerId": "3",
       "id": 4
+    },
+    {
+      "designName": "Design Five",
+      "designPrice": "$14",
+      "designDescription": "Weekday Cherish fluffy round neck jumper in neon green",
+      "designUrl": "img5.jpg",
+      "designerId": "3",
+      "id": 5
+    },
+    {
+      "designName": "Design six",
+      "designPrice": "$14",
+      "designDescription": "Weekday Cherish fluffy round neck jumper in neon green",
+      "designUrl": "img6.jpg",
+      "designerId": "4",
+      "id": 6
+    },
+    {
+      "designName": "eight",
+      "designPrice": "$214",
+      "designDescription": "Weekday Cherish fluffy round neck jumper in neon green",
+      "designUrl": "img10.jpg",
+      "designerId": "5",
+      "id": 7
+    },
+    {
+      "designName": "Design eight",
+      "designPrice": "$14",
+      "designDescription": "Weekday Cherish fluffy round neck jumper in neon green",
+      "designUrl": "img8.jpg",
+      "designerId": "5",
+      "id": 8
+    },
+    {
+      "designName": "Design tenn",
+      "designPrice": "$14",
+      "designDescription": "Weekday Cherish fluffy round neck jumper in neon green",
+      "designUrl": "img9.jpg",
+      "designerId": "5",
+      "id": 9
+    },
+    {
+      "designName": "Design tenn",
+      "designPrice": "$214",
+      "designDescription": "Weekday Cherish fluffy round neck jumper in neon green",
+      "designUrl": "img10.jpg",
+      "designerId": "5",
+      "id": 10
     }
-  ]
+  ],
+  "bookings": []
 }
