@@ -51,19 +51,11 @@
   ],
   "designs": [
     {
-      "designName": "Design one",
-      "designPrice": "$12",
+      "designName": "Design onee",
+      "designPrice": "$123",
       "designDescription": "Weekday Cherish fluffy round neck jumper in nen greenn",
       "designUrl": "img1.jpg",
-      "designerId": "2",
-      "id": 1
-    },
-    {
-      "designName": "Design Two",
-      "designPrice": "$14",
-      "designDescription": "Weekday Cherish fluffy round neck jumper in neon skyblue",
-      "designUrl": "img2.jpg",
-      "designerId": "2",
+      "designerId": "1",
       "id": 2
     },
     {
@@ -75,23 +67,23 @@
       "id": 3
     },
     {
-      "designName": "Design  Four",
-      "designPrice": "$21",
-      "designDescription": "ASOS DESIGN Tall mix & match suit in black",
-      "designUrl": "img4.jpg",
-      "designerId": "3",
-      "id": 4
-    },
-    {
-      "designName": "Design Five",
+      "designName": "Design Fiveddd",
       "designPrice": "$14",
       "designDescription": "Weekday Cherish fluffy round neck jumper in neon green",
       "designUrl": "img5.jpg",
-      "designerId": "3",
+      "designerId": "1",
+      "id": 4
+    },
+    {
+      "designName": "Design Fiveddd",
+      "designPrice": "$14",
+      "designDescription": "Weekday Cherish fluffy round neck jumper in neon green",
+      "designUrl": "img5.jpg",
+      "designerId": "1",
       "id": 5
     },
     {
-      "designName": "Design six",
+      "designName": "Design sixs",
       "designPrice": "$14",
       "designDescription": "Weekday Cherish fluffy round neck jumper in neon green",
       "designUrl": "img6.jpg",
@@ -129,7 +121,53 @@
       "designUrl": "img10.jpg",
       "designerId": "5",
       "id": 10
+    },
+    {
+      "designName": "Design four",
+      "designPrice": "$31",
+      "designDescription": "Miss Selfridge wrap top with flare sleeves in black sequin",
+      "designUrl": "img12",
+      "designerId": "1",
+      "id": 12
+    },
+    {
+      "designName": "Design four",
+      "designPrice": "$31",
+      "designDescription": "Miss Selfridge wrap top with flare sleeves in black sequin",
+      "designUrl": "img12",
+      "designerId": "1",
+      "id": 13
+    },
+    {
+      "designName": "Design fourgggggg",
+      "designPrice": "$31",
+      "designDescription": "Miss Selfridge wrap top with flare sleeves in black sequin",
+      "designUrl": "img12",
+      "designerId": "1",
+      "id": 14
     }
   ],
-  "bookings": []
+  "bookings": [
+    {
+      "designName": "",
+      "designPrice": "",
+      "designDescription": "",
+      "designUrl": "",
+      "id": 1
+    },
+    {
+      "designName": "Design onee",
+      "designPrice": "$123",
+      "designDescription": "Weekday Cherish fluffy round neck jumper in nen greenn",
+      "designUrl": "img1.jpg",
+      "id": 2
+    },
+    {
+      "designName": "Design onee",
+      "designPrice": "$123",
+      "designDescription": "Weekday Cherish fluffy round neck jumper in nen greenn",
+      "designUrl": "img1.jpg",
+      "id": 3
+    }
+  ]
 }

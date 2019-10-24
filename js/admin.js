@@ -2,25 +2,60 @@ $(document).ready(function () {
   $.ajax({
     url: `http://localhost:3000/designs`,
     type: "GET",
-    cache: true,
     success: function (data) {
       data.forEach((element, i) => {
-        $('.container-content').append(
-          `             
-            
-                <div class="card col-md-4 ">
-                    <img src="../myimages/${element.designUrl}" class="card-img-top" alt="..." width="280px" height="220px">
-                    <div class="card-body">
-                    <h5 class="card-title">${element.designName}</h5>
-                    <p class="card-text">${element.designDescription}</p>
-                    </div>
-                    <div class="card-footer">
-                    <small class="text-muted">${element.designPrice}</small>
-                          <button class="mybtn btn btn-primary stretched-link ml-4">Book Design</button>
-                         
-                </div>
-            
-            `
+        $("#myRow").append(`
+        <div class="col-4 mt-5 mb-5">
+        <img class="design image" src="../myimages/${element.designUrl}"/>
+        <h1 class='text-capitalize font-weight-bold'>${element.designName}</h1>
+        <p class='text-blue'>${element.designDescription}</p>
+        <p>${element.designPrice}</p>
+        <button data-toggle="modal" data-target="#booking-modal${element.id}" id="book-btn"class="btn btn-info btn-lg"">Book Design</button>
+
+      
+        <!-- booking modal -->
+
+        <div class="modal fade" id="booking-modal${element.id}" tabindex="-1" role="
+        dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create New Design</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="create-dsn">
+              <div class="form-group admin-email">
+                <input id="book-design-name" type="text" class="form-control " placeholder="${element.designName}">
+              </div>
+
+              <div class="form-group admin-email">
+                <input id="book-design-price" type="text" class="form-control " placeholder="${element.designPrice}">
+              </div>
+              <div class="form-group admin-email">
+                <input id="book-design-desc" type="text" class="form-control " placeholder="${element.designDescription}">
+              </div>
+              <div class="form-group admin-email">
+                <input id="book-design-url" type="text" class="form-control " placeholder="${element.designUrl}" disabled>
+              </div>
+              <div class="form-group admin-email">
+                <input id="book-design-id" type="text" class="form-control "   value="${element.id}" disabled>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-lg btn-danger" data-dismiss="modal">Close</button>
+            <button type="button"  class="btn btn-lg btn-dark save-booking">Save Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+        
+      `
         )
 
         $('tbody').append(`
@@ -33,8 +68,8 @@ $(document).ready(function () {
             <td id="design_url">${element.designUrl}</td>
             <td>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-light update-design-button" id=${element.id} data-toggle="modal" data-target="#update-form-modal">Update</button>
-                    <button type="button" class="btn btn-outline-danger delete-design" id=${element.id}>Delete</button>
+                    <button type="button" class="btn btn-outline-light update-design-button" id=${element.id} data-toggle="modal" data-target="#update-form-modal" style="padding:5px;">Update</button>
+                    <button type="button" class="btn btn-outline-danger delete-design" id=${element.id} style="padding:5px;">Delete</button>
                 </div>
             </td>
         </tr>
@@ -86,7 +121,7 @@ $(document).ready(function () {
           $.ajax({
             url: `http://localhost:3000/designs`,
             success: function (data) {
-              $('tbody').html('');
+              //$('tbody').html('');
               data.forEach((element, i) => {
                 $('tbody').append(`
             <tr id=${element.id}>
@@ -112,20 +147,42 @@ $(document).ready(function () {
 
       // Delete button function
       $('button.delete-design').on('click', function (e) {
+        alert('clicked')
         $.ajax({
-          url: `http://localhost:3000/designs`,
+          url: `http://localhost:3000/designs/${e.target.id}`,
           type: "delete",
           success: function () {
             alert("deleted");
           }
         })
       })
-      $('.mybtn').on('click', function (e) {
-        e.preventDefault();
-        const htmlval = this.prev();
-        console.log(htmlval);
 
-      })
+      //booking function
+      $('.save-booking').click(function (e) {
+        e.preventDefault();
+        const designName = $('#book-design-name').attr('placeholder');
+        const designPrice = $('#book-design-price').attr('placeholder');
+        const designDescription = $('#book-design-desc').attr('placeholder');
+        const designUrl = $('#book-design-url').attr('placeholder');
+        const designid = $('#book-design-id').attr('value');
+        const bookData = { designName, designPrice, designDescription, designUrl, designid };
+
+        console.log(bookData);
+
+
+        $.ajax({
+          url: 'http://localhost:3000/bookings',
+          type: "POST",
+          data: bookData,
+          success: function (data) {
+            alert("Successful")
+          },
+          error: function (error) {
+            alert("there was an error");
+          }
+        })
+      }
+      )
 
 
 
@@ -141,18 +198,18 @@ $(document).ready(function () {
         $('#update-design-url').val($('#' + id).children('td[id=design_url]').text())
 
 
+
         $('#update-changes').on('click', function () {
           const designupdate_objs = {
             designName: $('#update-design-name').val(),
             designPrice: $('#update-design-price').val(),
             designDescription: $('#update-design-desc').val(),
             designUrl: $('#update-design-url').val(),
-            designerId
+            designerId: designerId
 
           }
-
           $.ajax({
-            url: `http://localhost:3000/designs`,
+            url: `http://localhost:3000/designs/${e.target.id}`,
             type: "put",
             data: designupdate_objs,
             success: function () {
