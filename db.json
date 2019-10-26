@@ -52,7 +52,7 @@
   "designs": [
     {
       "designName": "Vintage trendy Stonewashed",
-      "designPrice": "$31",
+      "designPrice": "$322",
       "designDescription": "What you wear is how you present yourself to the world.",
       "designUrl": "db1.jpg",
       "designerId": "1",
@@ -69,7 +69,7 @@
     {
       "designName": "Embelished fur ",
       "designPrice": "$123",
-      "designDescription": "Weekday Cherish fluffy round neck jumper in neon green",
+      "designDescription": "Weekday Cherish fluffy round neck jumper in neon gblue",
       "designUrl": "db3.jpg",
       "designerId": "1",
       "id": 3
@@ -145,6 +145,22 @@
       "designUrl": "db14.jpg",
       "designerId": "5",
       "id": 12
+    },
+    {
+      "designName": "Lana Luna pearl",
+      "designPrice": "$31",
+      "designDescription": "Bright and shimmering design with a touch of pink",
+      "designUrl": "img4.jpg",
+      "designerId": "4",
+      "id": 13
+    },
+    {
+      "designName": "Dina Shimmer and shine",
+      "designPrice": "$24",
+      "designDescription": "Beaded lace and bright pink floral design",
+      "designUrl": "img7.jpg",
+      "designerId": "4",
+      "id": 14
     }
   ],
   "bookings": [

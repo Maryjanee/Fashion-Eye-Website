@@ -4,9 +4,9 @@ function loginUser() {
     const email = $('#email').val();
     const password = $('#password').val();
     const url = $(this).attr('action');
-    if (email.length < 1) {
-      alert("Please enter your email address");
-    } else if (password.length < 1) {
+    if (email == "") {
+      alert("Please enter a valid email address");
+    } else if (password == "") {
       alert("Please enter your password");
     } else {
       $.ajax({
@@ -14,10 +14,7 @@ function loginUser() {
         type: 'GET',
         dataType: 'json'
       }).done((data) => {
-        console.log(data);
-        // Save to localStorage
         localStorage.setItem('user', JSON.stringify(data[0]));
-        // Retrieve from localStorage
         const user = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user'));
 
         if (data[0].length === 0) {
