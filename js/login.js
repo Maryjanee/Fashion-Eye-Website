@@ -21,7 +21,7 @@ function loginUser() {
         const user = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user'));
 
         if (data[0].length === 0) {
-          alert('User login credentials incorrect')
+          alert('User not found')
         } else {
           if (data[0].isAdmin !== true) {
             window.location.replace('../html/designer.html')

@@ -1,4 +1,4 @@
-//function createDesign(e) {
+
 $(document).ready(function () {
   $('#create-changes').on('click', function (e) {
     e.preventDefault();
@@ -9,8 +9,6 @@ $(document).ready(function () {
     const designUrl = $('#create-design-url').val();
     const designer = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user'));
     const designerId = designer["id"];
-    const url = $(this).attr('action');
-
 
     const designValues = { designName, designPrice, designDescription, designUrl, designerId };
     console.log(designValues);
@@ -28,10 +26,10 @@ $(document).ready(function () {
         type: "POST",
         data: designValues,
         success: function (data) {
-          alert("Successful")
+          alert("Design successfully created")
         },
         error: function (error) {
-          alert("there was an error");
+          alert("An error Occured");
         }
       });
     }

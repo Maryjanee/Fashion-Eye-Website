@@ -1,4 +1,45 @@
 $(document).ready(function () {
+  function populateTableappend(data) {
+    data.forEach((element, i) => {
+      $('tbody').append(`
+             <tr id=${element.id}>
+                <th scope="row">${i + 1}</th>
+                <td id="design_name">${element.designName}</td>
+                <td id="design_desc">${element.designDescription}</td>
+                <td id="design_price">${element.designPrice}</td>
+                <td id="design_url">${element.designUrl}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-light update-design-button" id=${element.id} data-toggle="modal" data-target="#update-form-modal">Update</button>
+                        <button type="button" class="btn btn-outline-danger delete-design" id=${element.id}>Delete</button>
+                    </div>
+                </td>
+            </tr>
+             `)
+
+    })
+  }
+
+  function populateTableHtml(designs) {
+    designs.forEach((design, i) => {
+      $('tbody').html(`
+      <tr id=${design.id}>
+         <th scope="row">${i + 1}</th>
+         <td id="design_name">${design.designName}</td>
+         <td id="design_desc">${design.designDescription}</td>
+         <td id="design_price">${design.designPrice}</td>
+         <td id="design_url">${design.designUrl}</td>
+         <td>
+             <div class="btn-group" role="group" aria-label="Basic example">
+                 <button type="button" class="btn btn-outline-light update-design-button" id=${design.id} data-toggle="modal" data-target="#update-form-modal">Update</button>
+                 <button type="button" class="btn btn-outline-danger delete-design" id=${design.id}>Delete</button>
+             </div>
+         </td>
+     </tr>
+      `)
+
+    })
+  }
   const designer = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user'));
   const designerId = designer["id"];
   $.ajax({
@@ -6,24 +47,8 @@ $(document).ready(function () {
     type: "GET",
     cache: true,
     success: function (data) {
-      data.forEach((element, i) => {
-        $('tbody').append(`
-               <tr id=${element.id}>
-                  <th scope="row">${i + 1}</th>
-                  <td id="design_name">${element.designName}</td>
-                  <td id="design_desc">${element.designDescription}</td>
-                  <td id="design_price">${element.designPrice}</td>
-                  <td id="design_url">${element.designUrl}</td>
-                  <td>
-                      <div class="btn-group" role="group" aria-label="Basic example">
-                          <button type="button" class="btn btn-outline-light update-design-button" id=${element.id} data-toggle="modal" data-target="#update-form-modal">Update</button>
-                          <button type="button" class="btn btn-outline-danger delete-design" id=${element.id}>Delete</button>
-                      </div>
-                  </td>
-              </tr>
-               `)
+      populateTableappend(data);
 
-      });
 
       //search function
       $('#search-button').click(function (e) {
@@ -36,24 +61,7 @@ $(document).ready(function () {
           url: `http://localhost:3000/designs?designerId=${designerId}&designName_like=${desName}`,
           dataType: "json",
           success: function (designs) {
-            designs.forEach((design, i) => {
-              $('tbody').html(`
-              <tr id=${design.id}>
-                 <th scope="row">${i + 1}</th>
-                 <td id="design_name">${design.designName}</td>
-                 <td id="design_desc">${design.designDescription}</td>
-                 <td id="design_price">${design.designPrice}</td>
-                 <td id="design_url">${design.designUrl}</td>
-                 <td>
-                     <div class="btn-group" role="group" aria-label="Basic example">
-                         <button type="button" class="btn btn-outline-light update-design-button" id=${design.id} data-toggle="modal" data-target="#update-form-modal">Update</button>
-                         <button type="button" class="btn btn-outline-danger delete-design" id=${design.id}>Delete</button>
-                     </div>
-                 </td>
-             </tr>
-              `)
-
-            })
+            populateTableHtml(designs);
 
           },
           error: function (error) {
@@ -71,28 +79,13 @@ $(document).ready(function () {
             url: `http://localhost:3000/designs?designerId=${designerId}`,
             success: function (data) {
               $('tbody').html('');
-              data.forEach((element, i) => {
-                $('tbody').append(`
-                  <tr id=${element.id}>
-                    <th scope="row">${i + 1}</th>
-                    <td id="design_name">${element.designName}</td>
-                    <td id="design_desc">${element.designDescription}</td>
-                    <td id="design_price">${element.designPrice}</td>
-                    <td id="design_url">${element.designUrl}</td>
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-outline-light update-design-button" id=${element.id} data-toggle="modal" data-target="#update-form-modal">Update</button>
-                            <button type="button" class="btn btn-outline-danger delete-design" id=${element.id}>Delete</button>
-                        </div>
-                    </td>
-                  </tr>
-                `)
-              })
+              location.reload();
+              populateTableappend(data);
             }
           })
         }
       });
-      
+
 
 
       // Delete button function
@@ -125,7 +118,6 @@ $(document).ready(function () {
             designDescription: $('#update-design-desc').val(),
             designUrl: $('#update-design-url').val(),
             designerId
-
           }
 
           $.ajax({
@@ -137,9 +129,6 @@ $(document).ready(function () {
             }
           })
         })
-
-
-
 
       })
     }
