@@ -1,8 +1,8 @@
-# Stay In Touch 
+# Fashion Eye
 
 > Fashion Eye Website is a fashion design management system where designers sign up and upload designs and view uploaded designs by other members and basically manage creating, updating and deleting designs.
 
-![A screenshot of the the posts page](app/assets/images/fashionweb.png)
+![A screenshot of the the posts page](myimages/fashionweb.png)
 
 ## Built With
 
@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Fashion Eye Website] (https://rawcdn.githack.com/Maryjanee/Fashion-Eye-Website/a05c05680f640c77e14360c375aa6b3db00a28ca/html/index.html)
+![Fashion Eye Website](https://rawcdn.githack.com/Maryjanee/Fashion-Eye-Website/a05c05680f640c77e14360c375aa6b3db00a28ca/html/index.html)
 
 
 ### Setup
