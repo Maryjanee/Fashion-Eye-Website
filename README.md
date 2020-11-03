@@ -13,8 +13,7 @@
 
 
 ## Live Demo
-
-![Fashion Eye Website](https://rawcdn.githack.com/Maryjanee/Fashion-Eye-Website/a05c05680f640c77e14360c375aa6b3db00a28ca/html/index.html)
+[Fashion Eye Website](https://rawcdn.githack.com/Maryjanee/Fashion-Eye-Website/a05c05680f640c77e14360c375aa6b3db00a28ca/html/index.html)
 
 
 ### Setup
